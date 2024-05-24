@@ -58,20 +58,37 @@
 
     .result {
       width: 50%;
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 1rem;
       flex-direction: column;
+      display: flex;
       justify-content: center;
+      align-items: center;
       text-align: center;
       color: var(--white);
       background: linear-gradient(180deg, var(--light-slate-blue), var(--light-royal-blue));
     }
 
     .summary {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
       width: 50%;
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 1rem;
       background-color: var(--white);
+    }
+
+    .circle-score {
+      background: linear-gradient(180deg, var(--violet-blue), var(--persian-blue));
+      height: 200px;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      border-radius: 50%;
     }
 
     .attribution {
@@ -83,80 +100,155 @@
       color: hsl(228, 45%, 44%);
     }
 
-    @media screen and (max-width: 375px) {
-    .container {
+    .summary-reaction {
+      background-color: hsl(0, 100%, 67%, 0.1);
+      width: 250px;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 10px;
+    }
+
+    .summary-memory {
+      background-color: hsl(39, 100%, 56%, 0.1);
+      width: 250px;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 10px;
+    }
+
+    .summary-verbal {
+      background-color: hsl(166, 100%, 37%, 0.1);
+      width: 250px;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 10px;
+    }
+
+    .summary-visual {
+      background-color: hsl(234, 85%, 45%, 0.1);
+      width: 250px;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 10px;
+    }
+
+    .summary-button {
+      background-color: var(--dark-gray-blue);
+      color: white;
+      border: none;
+      margin-top: 1rem;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 30px;
+      padding-left: 30px;
+      font-weight: bold;
+      font-size: 14px;
+      border-radius: 90px;
+      cursor: pointer;
+      font-size: large;
+    }
+
+    .summary-button:hover {
+      background: linear-gradient(180deg, var(--light-slate-blue), var(--light-royal-blue));
+    }
+
+    @media screen and (max-width: 600px) {
+      html {
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
         flex-direction: column;
         align-items: center;
         width: 100%;
         border-radius: 0;
-    }
+      }
 
-    .result {
-      border-radius: 0;
-      border-bottom-left-radius: 2rem;
-      border-bottom-right-radius: 2rem;
-      width: fit-content;
+      .result {
+        border-radius: 0;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        width: fit-content;
+      }
+
+      .summary {
+        border-radius: 0;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        width: fit-content;
+        gap: 0.5rem;
+      }
     }
-}
   </style>
 </head>
 
 <body>
   <main class="container">
     <section class="result">
-      <h3>Your Result</h3>
-      <p>
-        76
-        of 100
-
+      <h3 style="color: var(--light-lavender); margin-bottom: 1rem;">Your Result</h3>
+      <div class="circle-score" style="margin: 1rem;">
+        <h1 style="font-size: 60px;">76</h1>
+        <p style="color: var(--light-lavender);">of 100</p>
+      </div>
+      <h1>Great</h1>
+      <p style="padding: 1rem; color: var(--light-lavender); width: 250px;">
+        You scored higher than 65% of the people who have taken <span style="display: block;">these tests.</span>
       </p>
-      <p>
-        Great
-      </p>
-      <p style="padding: 1rem;">
-        You scored higher than 65% of the people who have taken these tests.
-      </p>
-
-
-
-
     </section>
     <section class="summary">
-      <p>
-        Summary
-      </p>
-      <div class="summary-chip">
-        <p>
-          Reaction
-          80 / 100
-        </p>
+      <h2 style="margin-bottom: 1rem;">Summary</h2>
+      <div class="summary-reaction">
+        <div style="flex-direction: row; display: flex;">
+          <img src="assets/images/icon-reaction.svg" />
+          <p style="color: var(--light-red); padding-left: 10px;">Reaction</p>
+        </div>
+        <p style="font-weight: 600;">80 <span style="color: gray;">/ 100</span></p>
       </div>
-
-      <div class="summary-chip">
-        <p>
-          Memory
-          92 / 100
-        </p>
+      <div class="summary-memory">
+        <div style="flex-direction: row; display: flex;">
+          <img src="assets/images/icon-memory.svg" />
+          <p style="color: var(--orangey-yellow); padding-left: 10px;">Memory</p>
+        </div>
+        <p>92 <span style="color: gray;">/ 100</span></p>
       </div>
-
-      <div class="summary-chip">
-        <p>
-          Verbal
-          61 / 100
-        </p>
+      <div class="summary-verbal">
+        <div style="flex-direction: row; display: flex;">
+          <img src="assets/images/icon-verbal.svg" />
+          <p style="color: var(--green-teal); padding-left: 10px;">Verbal</p>
+        </div>
+        <p>61 <span style="color: gray;">/ 100</span></p>
       </div>
-
-      <div class="summary-chip">
-        <p>
-          Visual
-          72 / 100
-        </p>
+      <div class="summary-visual">
+        <div style="flex-direction: row; display: flex;">
+          <img src="assets/images/icon-visual.svg" />
+          <p style="color: var(--cobalt-blue); padding-left: 10px;">Verbal</p>
+        </div>
+        <p>72 <span style="color: gray;">/ 100</span></p>
       </div>
-      <button>Continue</button>
+      <button class="summary-button">Continue</button>
     </section>
   </main>
-
-
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Richie Rizal</a>.
